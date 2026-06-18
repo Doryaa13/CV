@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dor Yaacov — Product & Techno-Pedagogy Leader | AI & EdTech</title>
+<meta name="description" content="Dor Yaacov — Product Development & Techno-Pedagogy Manager. EdTech entrepreneur, Gen-AI workshops, gamified learning, and global projects across 6+ countries." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== Animated background ===== -->
+<div class="aurora">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="grid-overlay"></span>
+</div>
+<canvas id="particles"></canvas>
+
+<!-- ===== Scroll progress ===== -->
+<div class="scroll-progress"><span id="progressBar"></span></div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <a href="#hero" class="brand">DY<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#lectures">Lectures</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="btn btn-sm">Let's talk</a>
+</header>
+
+<!-- ===== Skills marquee (top) ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Product Development</span><span>•</span>
+    <span>Gen-AI &amp; Prompt Engineering</span><span>•</span>
+    <span>Vibe Coding</span><span>•</span>
+    <span>Gamification</span><span>•</span>
+    <span>LMS &amp; EdTech</span><span>•</span>
+    <span>Techno-Pedagogy</span><span>•</span>
+    <span>Global Team Leadership</span><span>•</span>
+    <span>B2B Product</span><span>•</span>
+    <span>Automation</span><span>•</span>
+    <span>Digital Marketing</span><span>•</span>
+    <!-- duplicate for seamless loop -->
+    <span>Product Development</span><span>•</span>
+    <span>Gen-AI &amp; Prompt Engineering</span><span>•</span>
+    <span>Vibe Coding</span><span>•</span>
+    <span>Gamification</span><span>•</span>
+    <span>LMS &amp; EdTech</span><span>•</span>
+    <span>Techno-Pedagogy</span><span>•</span>
+    <span>Global Team Leadership</span><span>•</span>
+    <span>B2B Product</span><span>•</span>
+    <span>Automation</span><span>•</span>
+    <span>Digital Marketing</span><span>•</span>
+  </div>
+</div>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero">
+  <div class="hero-text reveal">
+    <p class="eyebrow">Product · EdTech · Generative AI</p>
+    <h1>Dor&nbsp;Yaacov</h1>
+    <h2 class="rotator">
+      <span class="rotator-label">I build</span>
+      <span class="rotator-words">
+        <em>AI-powered learning systems.</em>
+        <em>gamified experiences.</em>
+        <em>global EdTech products.</em>
+        <em>growth engines.</em>
+      </span>
+    </h2>
+    <p class="lead">
+      Product Development &amp; Techno-Pedagogy Manager with 10+ years building
+      educational products from scratch — digital academies, learning games and
+      AI-powered learning systems — and leading multicultural teams across 6+ countries.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn">View my work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <ul class="hero-meta">
+      <li>📍 Kfar Yona, Israel</li>
+      <li>✉️ doryaa13@gmail.com</li>
+      <li>📞 <a href="tel:+972546528663">054-652-8663</a>
+        <a class="wa-link" href="https://wa.me/972546528663?text=היי,%20הגעתי%20דרך%20הקורות%20חיים%20באתר." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="hero-photo reveal">
+    <div class="photo-ring">
+      <div class="photo-frame">
+        <img src="assets/dor.jpg" alt="Dor Yaacov" id="heroImg"
+             onerror="this.classList.add('missing')" />
+        <div class="photo-fallback">DY</div>
+      </div>
+    </div>
+    <div class="floating-chip chip-1">🤖 AI learning system · 200+ users</div>
+    <div class="floating-chip chip-2">🗺️ 6+ countries</div>
+    <div class="floating-chip chip-3">🎤 50+ lectures</div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats">
+  <div class="stat reveal"><b data-count="10" data-suffix="+">0</b><span>Years in EdTech</span></div>
+  <div class="stat reveal"><b data-count="200" data-suffix="+">0</b><span>Users on our AI learning system</span></div>
+  <div class="stat reveal"><b data-count="6" data-suffix="+">0</b><span>Countries delivered in</span></div>
+  <div class="stat reveal"><b data-count="50" data-suffix="+">0</b><span>Lectures &amp; workshops</span></div>
+  <div class="stat reveal"><b data-count="20" data-suffix="+">0</b><span>Instructors led</span></div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section class="section" id="skills">
+  <div class="section-head reveal">
+    <span class="kicker">01 — Capabilities</span>
+    <h3>Skills &amp; Tools</h3>
+    <p>Where pedagogy, product and AI meet.</p>
+  </div>
+
+  <div class="skills-grid">
+    <article class="skill-card reveal">
+      <div class="skill-icon">🧩</div>
+      <h4>Product &amp; Pedagogy</h4>
+      <p>Physical &amp; digital learning products, gamified game design, LMS platforms and websites.</p>
+      <div class="bars">
+        <div class="bar"><span>Product design</span><i data-fill="95"></i></div>
+        <div class="bar"><span>Gamification</span><i data-fill="92"></i></div>
+        <div class="bar"><span>LMS / EdTech</span><i data-fill="90"></i></div>
+      </div>
+    </article>
+
+    <article class="skill-card reveal">
+      <div class="skill-icon">🤖</div>
+      <h4>Technology &amp; AI</h4>
+      <p>Automations, advanced Gen-AI tooling, prompt engineering and Vibe Coding.</p>
+      <div class="bars">
+        <div class="bar"><span>Gen-AI / Prompt Eng.</span><i data-fill="94"></i></div>
+        <div class="bar"><span>Automation</span><i data-fill="85"></i></div>
+        <div class="bar"><span>Vibe Coding</span><i data-fill="88"></i></div>
+      </div>
+    </article>
+
+    <article class="skill-card reveal">
+      <div class="skill-icon">🚀</div>
+      <h4>Leadership &amp; Venture</h4>
+      <p>B2B business development, multicultural team leadership, budgets and digital marketing.</p>
+      <div class="bars">
+        <div class="bar"><span>Team leadership</span><i data-fill="93"></i></div>
+        <div class="bar"><span>B2B development</span><i data-fill="87"></i></div>
+        <div class="bar"><span>Digital marketing</span><i data-fill="82"></i></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Experience timeline ===== -->
+<section class="section" id="experience">
+  <div class="section-head reveal">
+    <span class="kicker">02 — Journey</span>
+    <h3>Professional Experience</h3>
+    <p>A decade of building, teaching and leading.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2024 — Present</span>
+        <h4>Product Development Manager · LevelUP</h4>
+        <p class="t-sub">Global &amp; Business unit of Unistream</p>
+        <ul>
+          <li>Co-founder of the business unit — led the vision, branding and the revenue-generating product line.</li>
+          <li>Designed &amp; launched <b>LevelUP Academy</b>, a learning system powered by AI — now with ~200 active users today — plus the marketing site and B2B products (escape-room boxes, interactive videos).</li>
+          <li>Built content &amp; trained international teams across Canada, USA, Argentina, Ethiopia &amp; Nigeria.</li>
+          <li>Produced professional content days for hi-tech companies, directly managing ~20 instructors; delivered dozens of Gen-AI lectures &amp; workshops.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2021 — 2024</span>
+        <h4>Techno-Pedagogy &amp; SUN Program Manager · Unistream</h4>
+        <ul>
+          <li>Cross-organizational ownership of technological &amp; pedagogical content for entrepreneurship centers nationwide.</li>
+          <li>Specced, built &amp; deployed the org-wide SharePoint knowledge-management system with an external vendor.</li>
+          <li>Led staff training, authored dozens of lesson plans &amp; learning tracks, and mentored youth ventures.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2018 — Present</span>
+        <h4>Founder &amp; Manager · YourGame Production</h4>
+        <ul>
+          <li>Founded &amp; run a production company filming football matches for youth &amp; lower leagues — recruiting and managing videographers, full video editing, finance &amp; client operations.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2019 — 2020</span>
+        <h4>Regional Coordinator (South &amp; Jerusalem) · Machshava Tova</h4>
+        <ul>
+          <li>Recruited, trained &amp; managed instructors for digital-literacy courses; built partnerships with municipalities and taught senior citizens.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2020</span>
+        <h4>Online Tech Instructor · BIGIDEA BIG@Home</h4>
+        <ul>
+          <li>Taught kids &amp; teens basic coding, game development, video editing and 3D design in tech camps.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="t-item reveal">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <span class="t-date">2016 — 2018</span>
+        <h4>HQ &amp; Field Management Roles · Unistream</h4>
+        <ul>
+          <li><b>Charger excellence program manager</b> — launched &amp; ran a national pilot with industry leaders &amp; mentors.</li>
+          <li><b>Recruitment &amp; HR coordinator</b> — built a national screening &amp; onboarding system from scratch.</li>
+          <li><b>Nof HaGalil center manager</b> — full operation, working with the municipality, entrepreneurs &amp; business people.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Work / Portfolio ===== -->
+<section class="section" id="work">
+  <div class="section-head reveal">
+    <span class="kicker">03 — Selected Work</span>
+    <h3>Products &amp; Deliverables</h3>
+    <p>Things I built end-to-end. Replace media in <code>/assets</code> to feature your own shots &amp; clips.</p>
+  </div>
+
+  <div class="work-grid">
+    <article class="work-card feature reveal">
+      <div class="work-media">
+        <img src="assets/levelup-academy.jpg" alt="LevelUP Academy" onerror="this.style.display='none'">
+        <div class="work-media-fallback">🎓 LevelUP Academy</div>
+        <span class="tag">Flagship · AI Learning System</span>
+      </div>
+      <div class="work-body">
+        <h4>LevelUP Academy</h4>
+        <p>A learning system powered by AI that I specced, designed and shipped — now serving ~200 active users today with personalized, gamified pathways.</p>
+        <ul class="pill-row">
+          <li>Gen-AI</li><li>LMS</li><li>Gamification</li><li>Product</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <div class="work-media">
+        <video class="work-video" muted loop playsinline poster="assets/escape-poster.jpg" onerror="this.style.display='none'">
+          <source src="assets/escape-room.mp4" type="video/mp4">
+        </video>
+        <div class="work-media-fallback">🧠 Escape-Room Boxes</div>
+        <span class="tag">B2B · Physical</span>
+      </div>
+      <div class="work-body">
+        <h4>B2B Escape-Room Boxes</h4>
+        <p>Physical critical-thinking &amp; AI escape-room kits sold to hi-tech companies as team experiences.</p>
+        <ul class="pill-row"><li>Game design</li><li>B2B</li></ul>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <div class="work-media">
+        <img src="assets/interactive-video.jpg" alt="Interactive videos" onerror="this.style.display='none'">
+        <div class="work-media-fallback">🎬 Interactive Videos</div>
+        <span class="tag">Content</span>
+      </div>
+      <div class="work-body">
+        <h4>Interactive Learning Videos</h4>
+        <p>Branching, decision-based video experiences used in workshops and self-paced courses.</p>
+        <ul class="pill-row"><li>EdTech</li><li>Media</li></ul>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <div class="work-media">
+        <img src="assets/sharepoint.jpg" alt="Knowledge management system" onerror="this.style.display='none'">
+        <div class="work-media-fallback">🗂️ Knowledge System</div>
+        <span class="tag">Internal Platform</span>
+      </div>
+      <div class="work-body">
+        <h4>Org Knowledge-Management System</h4>
+        <p>SharePoint-based KMS, specced and rolled out org-wide with an external vendor.</p>
+        <ul class="pill-row"><li>SharePoint</li><li>Ops</li></ul>
+      </div>
+    </article>
+
+    <article class="work-card reveal">
+      <div class="work-media">
+        <video class="work-video" muted loop playsinline poster="assets/yourgame-poster.jpg" onerror="this.style.display='none'">
+          <source src="assets/yourgame.mp4" type="video/mp4">
+        </video>
+        <div class="work-media-fallback">⚽ YourGame Production</div>
+        <span class="tag">Venture</span>
+      </div>
+      <div class="work-body">
+        <h4>YourGame Production</h4>
+        <p>Football-match filming company — founded and run end-to-end, from crews to editing to finance.</p>
+        <ul class="pill-row"><li>Video</li><li>Business</li></ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Lectures & global ===== -->
+<section class="section" id="lectures">
+  <div class="section-head reveal">
+    <span class="kicker">04 — On Stage</span>
+    <h3>Lectures &amp; Workshops</h3>
+    <p>Dozens of hands-on Gen-AI sessions for hi-tech companies, youth and seniors — across the globe.</p>
+  </div>
+
+  <div class="lectures-layout">
+    <div class="globe-card reveal">
+      <h4>🌍 Global footprint</h4>
+      <ul class="country-list">
+        <li><span class="flag">🇨🇦</span> Canada</li>
+        <li><span class="flag">🇦🇷</span> Argentina</li>
+        <li><span class="flag">🇪🇹</span> Ethiopia</li>
+        <li><span class="flag">🇳🇬</span> Nigeria</li>
+        <li><span class="flag">🇮🇱</span> Israel</li>
+      </ul>
+      <p class="globe-note">Entrepreneurship &amp; AI workshops, instructor training and content delivery across 6+ countries.</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="g-item reveal" data-span="2">
+        <img src="assets/lecture-1.jpg" alt="Gen-AI workshop" onerror="this.style.display='none'">
+        <div class="g-fallback">🎤 Gen-AI Workshop</div>
+        <figcaption>Gen-AI workshop · Hi-tech company</figcaption>
+      </figure>
+      <figure class="g-item reveal">
+        <img src="assets/lecture-2.jpg" alt="Youth workshop" onerror="this.style.display='none'">
+        <div class="g-fallback">🧑‍🎓 Youth Session</div>
+        <figcaption>Youth entrepreneurship</figcaption>
+      </figure>
+      <figure class="g-item reveal">
+        <img src="assets/lecture-3.jpg" alt="International program" onerror="this.style.display='none'">
+        <div class="g-fallback">🌐 International</div>
+        <figcaption>International program</figcaption>
+      </figure>
+      <figure class="g-item reveal" data-span="2">
+        <video muted loop playsinline poster="assets/lecture-video-poster.jpg" onerror="this.style.display='none'">
+          <source src="assets/lecture-reel.mp4" type="video/mp4">
+        </video>
+        <div class="g-fallback">▶️ Lecture Reel</div>
+        <figcaption>Highlight reel</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Education + Service ===== -->
+<section class="section" id="education">
+  <div class="section-head reveal">
+    <span class="kicker">05 — Foundations</span>
+    <h3>Education, Service &amp; Volunteering</h3>
+  </div>
+
+  <div class="two-col">
+    <div class="info-card reveal">
+      <h4>🎓 Education</h4>
+      <div class="edu">
+        <span class="edu-date">2016 — 2019</span>
+        <p><b>B.A. in Education &amp; Communication</b><br>Ben-Gurion University of the Negev — graduate of the Communication excellence seminar.</p>
+      </div>
+      <div class="edu">
+        <span class="edu-date">2006 — 2009</span>
+        <p><b>Full matriculation</b><br>"Ben-Gurion" High School, Afula — Music, Psychology &amp; Sociology tracks.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal">
+      <h4>🎖️ Service &amp; Volunteering</h4>
+      <div class="edu">
+        <span class="edu-date">2010 — 2013</span>
+        <p><b>Full military service (Sergeant)</b><br>Team commander, math coordinator &amp; sergeant-major at the Alon education base.</p>
+      </div>
+      <div class="edu">
+        <span class="edu-date">2009 — 2010</span>
+        <p><b>Service year · "Eitan" core (Merkaz Maaseh)</b><br>Kiryat Shmona — mentoring &amp; developing at-risk youth.</p>
+      </div>
+      <div class="edu">
+        <span class="edu-date">2006 — 2009</span>
+        <p><b>Unistream program graduate</b><br>Developed a unique patent within the program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section contact" id="contact">
+  <div class="contact-inner reveal">
+    <span class="kicker">06 — Say hello</span>
+    <h3>Let's build something <em>unforgettable</em>.</h3>
+    <p>Open to product, EdTech &amp; AI leadership roles. The fastest way to reach me:</p>
+    <div class="contact-actions">
+      <a class="btn" href="mailto:doryaa13@gmail.com">✉️ doryaa13@gmail.com</a>
+      <a class="btn btn-wa" href="https://wa.me/972546528663?text=היי,%20הגעתי%20דרך%20הקורות%20חיים%20באתר." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="tel:+972546528663">📞 054-652-8663</a>
+    </div>
+    <p class="loc">📍 Kfar Yona, Israel</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Dor Yaacov · Product · EdTech · AI</p>
+  <a href="#hero" class="to-top">Back to top ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
