@@ -117,6 +117,8 @@ export default async (req) => {
 
   let scroll = null;
   let working = [...messages];
+  const textParts = []; // accumulate text across turns — the model may answer
+                        // in the same turn it calls the scroll tool.
 
   try {
     // Agentic loop: resolve any scroll_to_section tool calls server-side
@@ -141,6 +143,13 @@ export default async (req) => {
       const data = await apiRes.json();
       const blocks = data.content || [];
 
+      const turnText = blocks
+        .filter((b) => b.type === "text")
+        .map((b) => b.text)
+        .join("\n")
+        .trim();
+      if (turnText) textParts.push(turnText);
+
       if (data.stop_reason === "tool_use") {
         const toolUses = blocks.filter((b) => b.type === "tool_use");
         for (const tu of toolUses) {
@@ -157,19 +166,14 @@ export default async (req) => {
             content: "Scrolled.",
           })),
         });
-        continue; // ask the model for its final text reply
+        continue; // let the model add a final text reply if it wants to
       }
 
-      const reply = blocks
-        .filter((b) => b.type === "text")
-        .map((b) => b.text)
-        .join("\n")
-        .trim();
-
-      return jsonResponse({ reply: reply || "…", scroll });
+      break; // natural end of turn
     }
 
-    return jsonResponse({ reply: "Sorry, I couldn't complete that. Please try rephrasing.", scroll });
+    const reply = textParts.join("\n\n").trim();
+    return jsonResponse({ reply: reply || "Sorry, I couldn't generate a reply — please try rephrasing.", scroll });
   } catch (err) {
     console.error("chat function error", err);
     return jsonResponse({ error: "Something went wrong. Please try again." }, 500);
