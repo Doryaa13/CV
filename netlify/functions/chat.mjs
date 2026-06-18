@@ -2,7 +2,7 @@
 // Proxies to the Claude API (key stays server-side), answers from the CV
 // knowledge base below, and can ask the page to scroll to a relevant section.
 
-const MODEL = "claude-sonnet-4-6";
+const MODEL = "claude-haiku-4-5";
 const API_URL = "https://api.anthropic.com/v1/messages";
 
 // Valid scroll targets — must match the section ids in index.html.
@@ -111,8 +111,8 @@ export default async (req) => {
     max_tokens: 1024,
     system: SYSTEM_PROMPT,
     tools: TOOLS,
-    thinking: { type: "disabled" },
-    output_config: { effort: "low" },
+    // Note: Haiku 4.5 has no extended thinking by default and does not accept
+    // the `effort` parameter, so we keep the payload minimal for speed.
   };
 
   let scroll = null;
