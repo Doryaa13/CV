@@ -327,3 +327,21 @@ body.chat-open .chat-panel{opacity:1;transform:none;pointer-events:auto}
   .chat-panel{right:12px;left:12px;width:auto;bottom:88px;height:min(70vh,560px)}
   .chat-toggle{right:16px;bottom:16px}
 }
+
+/* ===== Chat nudge popup ===== */
+.chat-nudge{position:fixed;right:22px;bottom:94px;z-index:79;max-width:248px;cursor:pointer;
+  display:flex;align-items:flex-start;gap:8px;padding:14px 16px;
+  background:rgba(11,15,31,.94);border:1px solid var(--card-bd);border-radius:16px;border-bottom-right-radius:5px;
+  backdrop-filter:blur(14px);box-shadow:0 16px 40px rgba(0,0,0,.45);
+  opacity:0;transform:translateY(12px) scale(.92);pointer-events:none;transform-origin:bottom right;
+  transition:opacity .35s,transform .35s}
+.chat-nudge.show{opacity:1;transform:none;pointer-events:auto;animation:nudgePop 4s ease-in-out .4s 2}
+.chat-nudge::after{content:"";position:absolute;right:20px;bottom:-7px;width:14px;height:14px;
+  background:rgba(11,15,31,.94);border-right:1px solid var(--card-bd);border-bottom:1px solid var(--card-bd);
+  transform:rotate(45deg)}
+.chat-nudge-text{font-size:.9rem;line-height:1.45;font-weight:500;color:var(--ink)}
+.chat-nudge-close{flex:none;order:2;width:20px;height:20px;margin:-4px -4px 0 0;border:none;cursor:pointer;
+  background:transparent;color:var(--muted);font-size:1.2rem;line-height:1;border-radius:50%;transition:.2s}
+.chat-nudge-close:hover{color:var(--ink);background:rgba(255,255,255,.08)}
+@keyframes nudgePop{0%,100%{transform:none}25%{transform:translateY(-5px)}50%{transform:none}}
+@media(max-width:520px){.chat-nudge{right:16px;bottom:88px;max-width:220px}}

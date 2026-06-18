@@ -150,11 +150,36 @@ if (photo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const openingLog = log.innerHTML; // greeting + suggestion chips, for reset
   let busy = false;
 
+  // --- Nudge popup ("Curious about Dor's CV? Let's talk!") ---
+  const nudge = document.getElementById('chatNudge');
+  const NUDGE_KEY = 'dorChatNudgeSeen';
+  let nudgeTimer = null;
+
+  function dismissNudge() {
+    if (nudgeTimer) { clearTimeout(nudgeTimer); nudgeTimer = null; }
+    if (nudge) nudge.classList.remove('show');
+    try { localStorage.setItem(NUDGE_KEY, '1'); } catch (e) {}
+  }
+
   const openChat = (open) => {
     document.body.classList.toggle('chat-open', open);
-    if (open) setTimeout(() => input.focus(), 250);
+    if (open) { dismissNudge(); setTimeout(() => input.focus(), 250); }
   };
   toggle.addEventListener('click', () => openChat(!document.body.classList.contains('chat-open')));
+
+  if (nudge) {
+    let seen = false;
+    try { seen = localStorage.getItem(NUDGE_KEY) === '1'; } catch (e) {}
+    if (!seen) {
+      nudgeTimer = setTimeout(() => {
+        if (!document.body.classList.contains('chat-open')) nudge.classList.add('show');
+      }, 8000);
+    }
+    nudge.addEventListener('click', (e) => {
+      if (e.target.closest('.chat-nudge-close')) { dismissNudge(); return; } // just dismiss
+      openChat(true); // clicking the bubble opens the chat
+    });
+  }
 
   function addMsg(text, who) {
     const el = document.createElement('div');
