@@ -69,6 +69,8 @@ code{background:rgba(255,255,255,.07);padding:.1em .4em;border-radius:6px;font-s
 .btn-wa{background:#25d366;color:#06250f;box-shadow:0 10px 30px -10px rgba(37,211,102,.7)}
 .btn-wa:hover{background:#1ebe5a;box-shadow:0 18px 40px -12px rgba(37,211,102,.65)}
 .btn-wa svg{width:20px;height:20px}
+.btn-dl svg{width:18px;height:18px;flex:none}
+.nav-actions{display:flex;align-items:center;gap:10px}
 
 /* WhatsApp inline icon (next to hero phone) */
 .wa-link{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
