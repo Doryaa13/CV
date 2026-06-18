@@ -134,3 +134,84 @@ if (photo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     photo.style.transform = `translate(${x}px, ${y}px)`;
   }, { passive: true });
 }
+
+// ===== AI chat assistant =====
+(() => {
+  const toggle = document.getElementById('chatToggle');
+  const log = document.getElementById('chatLog');
+  const form = document.getElementById('chatForm');
+  const input = document.getElementById('chatInput');
+  if (!toggle || !form) return;
+
+  const sendBtn = form.querySelector('button');
+  const ENDPOINT = '/.netlify/functions/chat';
+  const history = [];   // {role, content} pairs sent to the API
+  let busy = false;
+
+  const openChat = (open) => {
+    document.body.classList.toggle('chat-open', open);
+    if (open) setTimeout(() => input.focus(), 250);
+  };
+  toggle.addEventListener('click', () => openChat(!document.body.classList.contains('chat-open')));
+
+  function addMsg(text, who) {
+    const el = document.createElement('div');
+    el.className = 'chat-msg ' + who;
+    el.textContent = text;
+    log.appendChild(el);
+    log.scrollTop = log.scrollHeight;
+    return el;
+  }
+
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  async function ask(question) {
+    if (busy || !question.trim()) return;
+    busy = true;
+    sendBtn.disabled = true;
+    input.value = '';
+
+    // Hide the suggestion chips after the first question.
+    const chips = log.querySelector('.chat-suggests');
+    if (chips) chips.remove();
+
+    addMsg(question, 'user');
+    history.push({ role: 'user', content: question });
+
+    const typing = addMsg('Typing…', 'bot typing');
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history })
+      });
+      const data = await res.json();
+      typing.remove();
+
+      if (!res.ok || data.error) {
+        addMsg(data.error || 'Something went wrong. Please try again.', 'bot error');
+      } else {
+        addMsg(data.reply, 'bot');
+        history.push({ role: 'assistant', content: data.reply });
+        if (data.scroll) scrollToSection(data.scroll);
+      }
+    } catch (err) {
+      typing.remove();
+      addMsg('Connection issue — please try again.', 'bot error');
+    } finally {
+      busy = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  form.addEventListener('submit', (e) => { e.preventDefault(); ask(input.value); });
+  log.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chat-chip');
+    if (chip) ask(chip.dataset.q);
+  });
+})();

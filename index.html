@@ -425,6 +425,39 @@
   <a href="#hero" class="to-top">Back to top ↑</a>
 </footer>
 
+<!-- ===== AI chat assistant ===== -->
+<button id="chatToggle" class="chat-toggle" aria-label="Ask about Dor" title="Ask about Dor">
+  <svg class="chat-ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg class="chat-ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<section id="chatPanel" class="chat-panel" aria-live="polite" aria-label="Chat with Dor's assistant">
+  <header class="chat-head">
+    <div class="chat-head-id">
+      <span class="chat-avatar">DY</span>
+      <div>
+        <strong>Ask about Dor</strong>
+        <small>AI assistant · answers from his CV</small>
+      </div>
+    </div>
+  </header>
+  <div id="chatLog" class="chat-log">
+    <div class="chat-msg bot">Hi! 👋 I'm Dor's assistant. Ask me anything about his experience, projects, lectures or skills — and I'll point you to the right part of the page.</div>
+    <div class="chat-suggests">
+      <button class="chat-chip" data-q="What does Dor do?">What does Dor do?</button>
+      <button class="chat-chip" data-q="Tell me about LevelUP Academy">LevelUP Academy</button>
+      <button class="chat-chip" data-q="Which countries has he worked in?">Where has he worked?</button>
+      <button class="chat-chip" data-q="How can I contact him?">How to contact him</button>
+    </div>
+  </div>
+  <form id="chatForm" class="chat-form">
+    <input id="chatInput" type="text" autocomplete="off" placeholder="Type your question…" maxlength="500" aria-label="Your question" />
+    <button type="submit" aria-label="Send" title="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
+</section>
+
 <script src="script.js"></script>
 </body>
 </html>
