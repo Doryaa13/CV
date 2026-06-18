@@ -144,8 +144,10 @@ if (photo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   if (!toggle || !form) return;
 
   const sendBtn = form.querySelector('button');
+  const resetBtn = document.getElementById('chatReset');
   const ENDPOINT = '/.netlify/functions/chat';
   const history = [];   // {role, content} pairs sent to the API
+  const openingLog = log.innerHTML; // greeting + suggestion chips, for reset
   let busy = false;
 
   const openChat = (open) => {
@@ -208,6 +210,16 @@ if (photo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       input.focus();
     }
   }
+
+  function resetChat() {
+    history.length = 0;
+    busy = false;
+    sendBtn.disabled = false;
+    input.value = '';
+    log.innerHTML = openingLog; // restores greeting + the preset question chips
+    input.focus();
+  }
+  if (resetBtn) resetBtn.addEventListener('click', resetChat);
 
   form.addEventListener('submit', (e) => { e.preventDefault(); ask(input.value); });
   log.addEventListener('click', (e) => {

@@ -289,8 +289,13 @@ body.chat-open .chat-toggle .chat-ic-close{display:block}
   opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .28s,transform .28s}
 body.chat-open .chat-panel{opacity:1;transform:none;pointer-events:auto}
 
-.chat-head{padding:16px 18px;border-bottom:1px solid var(--card-bd);background:rgba(255,255,255,.03)}
-.chat-head-id{display:flex;align-items:center;gap:12px}
+.chat-head{padding:16px 18px;border-bottom:1px solid var(--card-bd);background:rgba(255,255,255,.03);
+  display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chat-head-id{display:flex;align-items:center;gap:12px;min-width:0}
+.chat-reset{flex:none;width:34px;height:34px;border:1px solid var(--card-bd);background:rgba(255,255,255,.04);
+  color:var(--muted);border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:.3s}
+.chat-reset:hover{color:var(--ink);border-color:var(--brand-2);transform:rotate(-90deg)}
+.chat-reset svg{width:16px;height:16px}
 .chat-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none;
   font-family:'Sora';font-weight:800;font-size:.9rem;color:#06250f;background:var(--grad)}
 .chat-head-id strong{font-family:'Sora';font-size:1rem;display:block}
