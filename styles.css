@@ -245,6 +245,10 @@ code{background:rgba(255,255,255,.07);padding:.1em .4em;border-radius:6px;font-s
   .work-card.feature{grid-column:span 1}
   .lectures-layout,.two-col{grid-template-columns:1fr}
   .rotator-words{display:none}
+  /* Static background on mobile — no jumping */
+  .blob{animation:none}
+  #particles{display:none}
+  .grid-overlay{display:none}
 }
 @media(max-width:520px){
   .stats{grid-template-columns:1fr}
