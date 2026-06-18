@@ -114,6 +114,8 @@ code{background:rgba(255,255,255,.07);padding:.1em .4em;border-radius:6px;font-s
 .meta-chip-wa{background:#25d366;color:#06250f;border-color:transparent;font-weight:600}
 .meta-chip-wa:hover{background:#1ebe5a;border-color:transparent;box-shadow:0 12px 26px -12px rgba(37,211,102,.6)}
 .meta-chip-wa svg{width:16px;height:16px}
+.wa-icon-only{padding:0;width:40px;height:40px;justify-content:center}
+.meta-text{display:inline-flex;align-items:center;color:var(--muted)}
 
 /* Hero photo */
 .hero-photo{position:relative;justify-self:center}
