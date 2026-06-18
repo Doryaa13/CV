@@ -244,6 +244,7 @@ code{background:rgba(255,255,255,.07);padding:.1em .4em;border-radius:6px;font-s
   .skills-grid,.work-grid{grid-template-columns:1fr}
   .work-card.feature{grid-column:span 1}
   .lectures-layout,.two-col{grid-template-columns:1fr}
+  .rotator-words{display:none}
 }
 @media(max-width:520px){
   .stats{grid-template-columns:1fr}
